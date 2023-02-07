@@ -1,0 +1,120 @@
+ @font-face {
+    font-family: 'vcr_osd_monoregular';
+    src: url('vcr_osd_mono_1.001-webfont.woff2') format('woff2'),
+         url('vcr_osd_mono_1.001-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+    font-family: 'vcr_osd_monoregular';
+    background-color: black;
+}
+
+main{
+    display: flexbox;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-size: 100px;
+    color: white;
+
+    
+}
+
+#title{
+ 
+       
+        animation-name: blink;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        animation-timing-function: steps(1,end);
+
+        filter: blur(2px);
+        width: 1000px;
+} 
+
+@media (max-width: 750px){
+    nav{
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        
+    }
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-size: 25px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+
+@keyframes blink{
+    50%{
+        color: darkgray;
+    }
+}
+
+.nav-text{
+    filter: blur(2px);
+}
+
+.nav-text:hover{
+    animation-name: blur;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes blur{
+    0%{
+        filter: blur(1);
+    }
+
+    25%{
+        filter: blur(0.75);
+    }
+
+    50%{
+        filter: blur(0.50);
+    }
+
+    75%{
+        filter: blur(0.25);
+    }
+
+    100%{
+        filter: blur(0);
+    }
+}
+
+video{
+    height: 98vh;
+    width: 100%;
+}
+
+#copyright{
+    color: darkgray;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+#cp-text{
+    filter: blur(3);
+    visibility: hidden;
+}
+
+#cp-text:hover{
+    visibility: visible;
+}
+
+a, a:visited{
+    color: darkgrey;
+    text-decoration: none;
+}
+
